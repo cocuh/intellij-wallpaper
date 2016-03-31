@@ -16,11 +16,10 @@ public class WallpaperApplicationComponent implements ApplicationComponent {
 
     @Override
     public void initComponent() {
-        // TODO: insert component initialization logic here
-        if (System.getProperty(EDITOR_PROPERTY_NAME) != null & !Comparing.equal(System.getProperty(EDITOR_PROPERTY_NAME), "")) {
+        if (System.getProperty(EDITOR_PROPERTY_NAME) == null | Comparing.equal(System.getProperty(EDITOR_PROPERTY_NAME), "")) {
             notifyPropertyAlreadySet(EDITOR_PROPERTY_NAME);
         }
-        if (System.getProperty(IDE_PROPERTY_NAME) != null & !Comparing.equal(System.getProperty(IDE_PROPERTY_NAME), "")) {
+        if (System.getProperty(IDE_PROPERTY_NAME) == null | Comparing.equal(System.getProperty(IDE_PROPERTY_NAME), "")) {
             notifyPropertyAlreadySet(IDE_PROPERTY_NAME);
         }
 
