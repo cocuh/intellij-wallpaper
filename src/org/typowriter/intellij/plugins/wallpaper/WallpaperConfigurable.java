@@ -1,19 +1,21 @@
 package org.typowriter.intellij.plugins.wallpaper;
 
 
-import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.components.JBTabbedPane;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.typowriter.intellij.plugins.wallpaper.ui.WallpaperSettingsPanel;
 
 import javax.swing.*;
 
-public class WallpaperConfigurable implements Configurable {
+public class WallpaperConfigurable implements SearchableConfigurable {
 
     private WallpaperSettingsPanel myIdeSettingPane;
     private WallpaperSettingsPanel myEditorSettingPane;
+    private JBTabbedPane tabbedPane;
 
     @Nls
     @Override
@@ -21,7 +23,7 @@ public class WallpaperConfigurable implements Configurable {
         return "Wallpaper";
     }
 
-    @Nullable
+    @NotNull
     @Override
     public String getHelpTopic() {
         return "settings.wallpaper";
@@ -36,7 +38,7 @@ public class WallpaperConfigurable implements Configurable {
         if (myEditorSettingPane == null) {
             myEditorSettingPane = new WallpaperSettingsPanel(WallpaperEditorSettings.getInstance());
         }
-        JBTabbedPane tabbedPane = new JBTabbedPane();
+        tabbedPane = new JBTabbedPane();
         tabbedPane.add(myIdeSettingPane.getPanel(), "IDE");
         tabbedPane.add(myEditorSettingPane.getPanel(), "Editor");
         return tabbedPane;
@@ -55,11 +57,26 @@ public class WallpaperConfigurable implements Configurable {
 
     @Override
     public void reset() {
-
+        myIdeSettingPane.reset();
+        myEditorSettingPane.reset();
     }
 
     @Override
     public void disposeUIResources() {
+        tabbedPane = null;
+        myIdeSettingPane = null;
+        myEditorSettingPane = null;
+    }
 
+    @NotNull
+    @Override
+    public String getId() {
+        return getHelpTopic();
+    }
+
+    @Nullable
+    @Override
+    public Runnable enableSearch(String s) {
+        return null;
     }
 }

@@ -24,6 +24,11 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
+    <applicationConfigurable instance="org.typowriter.intellij.plugins.wallpaper.WallpaperConfigurable"/>
+    <applicationService serviceInterface="org.typowriter.intellij.plugins.wallpaper.WallpaperEditorSettings"
+                        serviceImplementation="org.typowriter.intellij.plugins.wallpaper.WallpaperEditorSettings"/>
+    <applicationService serviceInterface="org.typowriter.intellij.plugins.wallpaper.WallpaperIdeSettings"
+                        serviceImplementation="org.typowriter.intellij.plugins.wallpaper.WallpaperIdeSettings"/>
   </extensions>
 
   <actions>
