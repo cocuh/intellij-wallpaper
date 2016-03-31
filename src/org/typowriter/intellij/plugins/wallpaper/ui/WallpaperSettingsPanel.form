@@ -189,6 +189,7 @@
   <buttonGroups>
     <group name="ObtainMethod">
       <member id="59ab1"/>
+      <member id="22c3b"/>
     </group>
     <group name="ModeGroup">
       <member id="59ab2"/>

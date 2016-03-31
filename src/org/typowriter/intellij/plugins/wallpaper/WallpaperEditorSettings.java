@@ -8,6 +8,10 @@ import org.jetbrains.annotations.Nullable;
 
 @State(name = "WallpaperEditorSettings", storages = @Storage("wallpaper_editor_settings.xml"))
 public class WallpaperEditorSettings extends WallpaperBaseSettings implements PersistentStateComponent<WallpaperState> {
+    WallpaperEditorSettings() {
+        myState = new WallpaperState();
+    }
+
     @Nullable
     @Override
     public WallpaperState getState() {
@@ -19,7 +23,7 @@ public class WallpaperEditorSettings extends WallpaperBaseSettings implements Pe
         myState = state;
     }
 
-    public static WallpaperEditorSettings getInstance() {
+    static WallpaperEditorSettings getInstance() {
         return ServiceManager.getService(WallpaperEditorSettings.class);
     }
 }

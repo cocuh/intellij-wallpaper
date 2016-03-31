@@ -39,8 +39,8 @@ public class WallpaperConfigurable implements SearchableConfigurable {
             myEditorSettingPane = new WallpaperSettingsPanel(WallpaperEditorSettings.getInstance());
         }
         tabbedPane = new JBTabbedPane();
-        tabbedPane.add(myIdeSettingPane.getPanel(), "IDE");
         tabbedPane.add(myEditorSettingPane.getPanel(), "Editor");
+        tabbedPane.add(myIdeSettingPane.getPanel(), "IDE");
         return tabbedPane;
     }
 
