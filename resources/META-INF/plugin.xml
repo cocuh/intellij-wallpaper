@@ -4,9 +4,11 @@
   <version>0.0.1</version>
   <vendor email="cocuh.kk@gmail.com" url="http://typowriter.org">cocuh</vendor>
 
-  <description>
+  <description><![CDATA[
     intellij wallpaper plugin
-  </description>
+    <img src="https://raw.githubusercontent.com/wiki/cocuh/intellij-wallpaper/img/illya-small.png"/>
+    <img src="https://raw.githubusercontent.com/wiki/cocuh/intellij-wallpaper/img/settings-small.png"/>
+  ]]></description>
 
   <change-notes>
     <![CDATA[
