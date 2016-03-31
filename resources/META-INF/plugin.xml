@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.typowriter.intellij.plugins.wallpaper</id>
   <name>Wallpaper</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <vendor email="cocuh.kk@gmail.com" url="http://typowriter.org">cocuh</vendor>
 
   <description><![CDATA[
@@ -11,6 +11,12 @@
   <change-notes>
     <![CDATA[
     <dl>
+      <dt>
+        0.0.2
+      </dt>
+      <dd>
+        change descriptions
+      </dd>
       <dt>
         0.0.1
       </dt>
