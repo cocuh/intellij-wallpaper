@@ -43,5 +43,9 @@ public abstract class WallpaperBaseSettings implements IWallpaperSettings {
     public final void setOpacity(final int opacity) {
         myState.opacity = opacity;
     }
+
+    public final String getPropertyString() {
+        return (isUrlSelected() ? getUrl() : getFilePath()) + "," + getOpacity() + "," + getMode();
+    }
 }
 

@@ -1,5 +1,7 @@
 package org.typowriter.intellij.plugins.wallpaper.ui;
 
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.util.Comparing;
 import org.jetbrains.annotations.NotNull;
@@ -43,6 +45,8 @@ public class WallpaperSettingsPanel {
 
     public WallpaperSettingsPanel(IWallpaperSettings settings) {
         mySettings = settings;
+        FileChooserDescriptor fileChooserDescriptor = FileChooserDescriptorFactory.createSingleFileNoJarsDescriptor();
+        filePathField.addBrowseFolderListener("wallpaper", "select wallpaper image", null, fileChooserDescriptor);
     }
 
     @NotNull
