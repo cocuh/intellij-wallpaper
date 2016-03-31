@@ -7,23 +7,19 @@ import com.intellij.openapi.components.Storage;
 import org.jetbrains.annotations.Nullable;
 
 @State(name = "WallpaperEditorSettings", storages = @Storage("wallpaper_editor_settings.xml"))
-public class WallpaperEditorSettings extends WallpaperBaseSettings implements PersistentStateComponent<WallpaperBaseSettings.State> {
-    public WallpaperEditorSettings() {
-        myState = new State();
-    }
-
+public class WallpaperEditorSettings extends WallpaperBaseSettings implements PersistentStateComponent<WallpaperState> {
     @Nullable
     @Override
-    public WallpaperBaseSettings.State getState() {
+    public WallpaperState getState() {
         return myState;
     }
 
     @Override
-    public void loadState(WallpaperBaseSettings.State state) {
+    public void loadState(WallpaperState state) {
         myState = state;
     }
 
-    public static WallpaperIdeSettings getInstance() {
-        return ServiceManager.getService(WallpaperIdeSettings.class);
+    public static WallpaperEditorSettings getInstance() {
+        return ServiceManager.getService(WallpaperEditorSettings.class);
     }
 }

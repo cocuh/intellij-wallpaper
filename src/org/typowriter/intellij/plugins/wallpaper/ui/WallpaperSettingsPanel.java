@@ -3,7 +3,7 @@ package org.typowriter.intellij.plugins.wallpaper.ui;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.util.Comparing;
 import org.jetbrains.annotations.NotNull;
-import org.typowriter.intellij.plugins.wallpaper.WallpaperBaseSettings;
+import org.typowriter.intellij.plugins.wallpaper.IWallpaperSettings;
 
 import javax.swing.*;
 import java.util.Arrays;
@@ -26,7 +26,7 @@ public class WallpaperSettingsPanel {
     private JRadioButton bgCenterRadioButton;
     private JPanel myPane;
     private TextFieldWithBrowseButton filePathField;
-    private final WallpaperBaseSettings mySettings;
+    private final IWallpaperSettings mySettings;
 
     private List<JRadioButton> radioButtonList = Arrays.asList(
             scaleRadioButton,
@@ -41,7 +41,7 @@ public class WallpaperSettingsPanel {
             bgCenterRadioButton
     );
 
-    public WallpaperSettingsPanel(WallpaperBaseSettings settings) {
+    public WallpaperSettingsPanel(IWallpaperSettings settings) {
         mySettings = settings;
     }
 

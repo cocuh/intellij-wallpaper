@@ -1,6 +1,9 @@
 package org.typowriter.intellij.plugins.wallpaper;
 
 
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.components.JBTabbedPane;
@@ -53,6 +56,8 @@ public class WallpaperConfigurable implements SearchableConfigurable {
     public void apply() throws ConfigurationException {
         myIdeSettingPane.apply();
         myEditorSettingPane.apply();
+        Notifications.Bus.notify(new Notification("", "", "pane:" + myIdeSettingPane.getFilePath(), NotificationType.ERROR));
+        Notifications.Bus.notify(new Notification("", "", "settings:" + WallpaperIdeSettings.getInstance().getFilePath(), NotificationType.ERROR));
     }
 
     @Override

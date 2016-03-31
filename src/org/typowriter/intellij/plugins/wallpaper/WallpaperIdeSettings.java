@@ -6,23 +6,20 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import org.jetbrains.annotations.Nullable;
 
-@State(name = "WallpaperIdeSettings", storages = @Storage("wallpaper_ide_settings.xml"))
-public class WallpaperIdeSettings extends WallpaperBaseSettings implements PersistentStateComponent<WallpaperBaseSettings.State> {
-    public WallpaperIdeSettings() {
-        myState = new State();
-    }
 
+@State(name = "WallpaperIdeSettings", storages = @Storage("wallpaper_ide_settings.xml"))
+public class WallpaperIdeSettings extends WallpaperBaseSettings implements PersistentStateComponent<WallpaperState> {
     @Nullable
     @Override
-    public State getState() {
+    public WallpaperState getState() {
         return myState;
     }
 
     @Override
-    public void loadState(State state) {
+    public void loadState(WallpaperState state) {
         myState = state;
     }
-    
+
     public static WallpaperIdeSettings getInstance() {
         return ServiceManager.getService(WallpaperIdeSettings.class);
     }

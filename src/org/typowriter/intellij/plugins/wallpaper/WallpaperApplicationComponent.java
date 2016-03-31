@@ -14,8 +14,8 @@ public class WallpaperApplicationComponent implements ApplicationComponent {
     public void initComponent() {
         // TODO: insert component initialization logic here
         Notifications.Bus.notify(new Notification("", "", "youjo love", NotificationType.ERROR));
-        System.setProperty("idea.wallpaper.editor","/tmp/illya.png,10");
-        System.setProperty("idea.wallpaper.ide","/tmp/mashiro.gif,10");
+//        System.setProperty("idea.wallpaper.editor","/tmp/illya.png,10");
+//        System.setProperty("idea.wallpaper.ide","/tmp/mashiro.gif,10");
     }
 
     @Override
