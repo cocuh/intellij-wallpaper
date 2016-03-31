@@ -1,17 +1,23 @@
 <idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
+  <id>org.typowriter.intellij.plugins.wallpaper</id>
   <name>Wallpaper</name>
-  <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <version>0.0.1</version>
+  <vendor email="cocuh.kk@gmail.com" url="http://typowriter.org">cocuh</vendor>
 
-  <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
-    ]]></description>
+  <description>
+    intellij wallpaper plugin
+  </description>
 
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+  <change-notes>
+    <![CDATA[
+    <dl>
+      <dt>
+        0.0.1
+      </dt>
+      <dd>
+        release plugin
+      </dd>
+    </dl>
     ]]>
   </change-notes>
 
