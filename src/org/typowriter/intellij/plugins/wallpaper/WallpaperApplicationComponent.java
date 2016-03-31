@@ -4,7 +4,6 @@ import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.util.Comparing;
 import org.jetbrains.annotations.NotNull;
 
 public class WallpaperApplicationComponent implements ApplicationComponent {
@@ -16,12 +15,12 @@ public class WallpaperApplicationComponent implements ApplicationComponent {
 
     @Override
     public void initComponent() {
-        if (System.getProperty(EDITOR_PROPERTY_NAME) == null | Comparing.equal(System.getProperty(EDITOR_PROPERTY_NAME), "")) {
-            notifyPropertyAlreadySet(EDITOR_PROPERTY_NAME);
-        }
-        if (System.getProperty(IDE_PROPERTY_NAME) == null | Comparing.equal(System.getProperty(IDE_PROPERTY_NAME), "")) {
-            notifyPropertyAlreadySet(IDE_PROPERTY_NAME);
-        }
+//        if (System.getProperty(EDITOR_PROPERTY_NAME) == null | Comparing.equal(System.getProperty(EDITOR_PROPERTY_NAME), "")) {
+//            notifyPropertyAlreadySet(EDITOR_PROPERTY_NAME);
+//        }
+//        if (System.getProperty(IDE_PROPERTY_NAME) == null | Comparing.equal(System.getProperty(IDE_PROPERTY_NAME), "")) {
+//            notifyPropertyAlreadySet(IDE_PROPERTY_NAME);
+//        }
 
         refreshProperties();
     }
