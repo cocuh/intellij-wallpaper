@@ -24,17 +24,17 @@ public class WallpaperApplicationComponent implements ApplicationComponent {
             notifyPropertyAlreadySet(IDE_PROPERTY_NAME);
         }
 
-        resetProperties();
+        refreshProperties();
     }
 
-    public void notifyPropertyAlreadySet(String propertyName) {
+    private void notifyPropertyAlreadySet(String propertyName) {
         String content = "You have already set system property:\"" + propertyName + "\"\nThe property will be overwrote.";
         Notifications.Bus.notify(new Notification("Wallpaper Plugin", "Wallpaper Plugin", content, NotificationType.WARNING));
     }
 
     @Override
     public void disposeComponent() {
-        // TODO: insert component disposal logic here
+        clearProperties();
     }
 
     @Override
@@ -43,7 +43,12 @@ public class WallpaperApplicationComponent implements ApplicationComponent {
         return "WallpaperApplicationComponent";
     }
 
-    public static void resetProperties() {
+    private static void clearProperties() {
+        System.setProperty(IDE_PROPERTY_NAME, "");
+        System.setProperty(EDITOR_PROPERTY_NAME, "");
+    }
+
+    static void refreshProperties() {
         System.setProperty(IDE_PROPERTY_NAME, WallpaperIdeSettings.getInstance().getPropertyString());
         System.setProperty(EDITOR_PROPERTY_NAME, WallpaperEditorSettings.getInstance().getPropertyString());
     }

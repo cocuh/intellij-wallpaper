@@ -55,7 +55,7 @@ public class WallpaperConfigurable implements SearchableConfigurable {
         myEditorSettingPane.apply();
 
         // todo factoring:
-        WallpaperApplicationComponent.resetProperties();
+        WallpaperApplicationComponent.refreshProperties();
     }
 
     @Override
