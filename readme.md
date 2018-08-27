@@ -1,5 +1,7 @@
 # wallpaper plugin for intellij
 
+## DEPRECATED: use [official wallpaer feature](https://www.jetbrains.com/help/idea/setting-background-image.html)
+
 This is wallpaper plugin for intellij. That's all.
 
     UPDATE: 2016/07/24
